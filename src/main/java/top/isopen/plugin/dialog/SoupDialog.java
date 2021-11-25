@@ -39,7 +39,7 @@ public class SoupDialog extends DialogWrapper {
         panel = new JPanel();
         JButton ok = new JButton("I`m OK");
         ok.addActionListener(e -> {
-            super.close(0);
+            SoupDialog.this.dispose();
         });
         JButton oneMore = new JButton("One more");
         oneMore.addActionListener(e -> {

@@ -14,7 +14,7 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
-        <notificationGroup displayType="STICKY_BALLOON" id="IsOpen" isLogByDefault="true"/>
+        <notificationGroup displayType="BALLOON" id="IsOpen" isLogByDefault="true"/>
     </extensions>
 
     <actions>
@@ -26,14 +26,11 @@
         </action>
     </actions>
     <application-components>
-        <component>
+        <!--<component>
             <implementation-class>top.isopen.plugin.component.SoupComponent</implementation-class>
-        </component>
+        </component>-->
     </application-components>
 
-    <applicationListeners>
-        <listener class="top.isopen.plugin.listener.ApplicationListener" topic="com.intellij.ide.AppLifecycleListener"/>
-    </applicationListeners>
     <projectListeners>
         <listener class="top.isopen.plugin.listener.ProjectListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>

@@ -3,6 +3,7 @@ package top.isopen.plugin.listener;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManagerListener;
 import org.jetbrains.annotations.NotNull;
+import top.isopen.plugin.dialog.SoupDialog;
 
 /**
  * @author TimeChaser
@@ -12,7 +13,7 @@ public class ProjectListener implements ProjectManagerListener {
 
     @Override
     public void projectOpened(@NotNull Project project) {
-        ProjectManagerListener.super.projectOpened(project);
-        System.out.println("projectOpened");
+        SoupDialog soupDialog = new SoupDialog();
+        soupDialog.show();
     }
 }

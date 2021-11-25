@@ -7,6 +7,7 @@ import top.isopen.plugin.dialog.SoupDialog;
  * @author TimeChaser
  * @since 2021/11/25 14:17
  */
+@Deprecated
 public class SoupComponent implements ApplicationComponent {
 
     @Override
