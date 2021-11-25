@@ -1,0 +1,41 @@
+<idea-plugin>
+    <id>top.isopen.plugin.FirstDemoPlugin</id>
+    <name>Soul Soup</name>
+    <vendor email="zhangwei@irvingsoft.top" url="https://www.irvingsoft.top">Irvingsoft</vendor>
+
+    <description><![CDATA[
+    Soul Soup.<br>
+    <em>This is the Soul Soup made by Irvingsoft</em>
+    ]]></description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <notificationGroup displayType="STICKY_BALLOON" id="IsOpen" isLogByDefault="true"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="DemoActionID" class="top.isopen.plugin.component.SoupNotification" text="Soul Soup"
+                description="This is made by irvingsoft.">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt p"/>
+        </action>
+    </actions>
+    <application-components>
+        <component>
+            <implementation-class>top.isopen.plugin.component.SoupComponent</implementation-class>
+        </component>
+    </application-components>
+
+    <applicationListeners>
+        <listener class="top.isopen.plugin.listener.ApplicationListener" topic="com.intellij.ide.AppLifecycleListener"/>
+    </applicationListeners>
+    <projectListeners>
+        <listener class="top.isopen.plugin.listener.ProjectListener"
+                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
+    </projectListeners>
+</idea-plugin>
