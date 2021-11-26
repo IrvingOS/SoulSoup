@@ -28,6 +28,7 @@
     <application-components>
         <!--<component>
             <implementation-class>top.isopen.plugin.component.SoupComponent</implementation-class>
+            // Used to build dialog here.
         </component>-->
     </application-components>
 
