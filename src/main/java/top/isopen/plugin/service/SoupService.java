@@ -15,6 +15,9 @@ public class SoupService {
 
     public String getContent() {
         String response = HttpClientHelper.sendGet(API);
+        if (response == null) {
+            return null;
+        }
         ObjectMapper objectMapper = new ObjectMapper();
         SoupResponse soupResponse = null;
         try {

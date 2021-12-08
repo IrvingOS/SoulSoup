@@ -5,6 +5,7 @@ import com.intellij.notification.NotificationType;
 import com.intellij.notification.Notifications;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import top.isopen.plugin.dialog.SoupDialog;
 import top.isopen.plugin.service.SoupService;
 
 /**
@@ -17,6 +18,10 @@ public class SoupNotification extends AnAction {
 
     @Override
     public void actionPerformed(AnActionEvent e) {
-        Notifications.Bus.notify(new Notification("IsOpen", "Soul Soup", soupService.getContent(), NotificationType.INFORMATION));
+        String content = soupService.getContent();
+        Notifications.Bus.notify(new Notification("IsOpen",
+                "Soul Soup",
+                content != null ? content : SoupDialog.ERROR,
+                NotificationType.INFORMATION));
     }
 }
